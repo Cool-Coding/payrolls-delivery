@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EmailsSend/EmailsSend.iml" filepath="$PROJECT_DIR$/EmailsSend/EmailsSend.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/payrolls_sending.iml" filepath="$PROJECT_DIR$/.idea/payrolls_sending.iml" />
     </modules>
   </component>

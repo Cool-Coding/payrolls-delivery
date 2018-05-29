@@ -204,7 +204,7 @@ public class ExcelUtil {
     private String getPassword(){
         final Properties properties = new Properties();
         try {
-            properties.load(new ClassPathResource("application.properties",this.getClass().getClassLoader()).getInputStream());
+            properties.load(new ClassPathResource("src/main/resources/application.properties",this.getClass().getClassLoader()).getInputStream());
             password = properties.getProperty("excel.password");
         }catch (IOException e){
             logger.error(e.getMessage(),e);
