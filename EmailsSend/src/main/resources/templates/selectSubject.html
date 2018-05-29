@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body style="text-align: center">
+<form action="/showResult" method="post">
+ <select id="subjects" name="subject">
+     <th:block th:each="subject : ${subjects}">
+         <option th:value="${subject}" th:text="${subject}"></option>
+     </th:block>
+ </select>
+<input type="submit" value="确定"></input>
+</form>
+</body>
+</html>
