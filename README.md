@@ -37,7 +37,7 @@
   发送失败的邮件状态截图:     
   ![邮件状态](https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/477a9a2f710874f71c6d1b9d1eafe8569de5288dd3686e15ffff11ad17d4211b8cc2cc1876685a4f80ed1210e43473e6?pictype=scale&from=30111&version=3.3.3.3&uin=542600078&fname=failed_sending.png&size=750)
   
-  **预览网址**
+  **预览网址**  
   [Click Me](http://172.93.47.42)
   
   
