@@ -37,7 +37,7 @@
   ![邮件状态](https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/d7d71df71a1866c21e522329aacf20e0f0a8b978a5899eed460ebc66dd9bf0db222be351e285ea368d834fdb144e2276?pictype=scale&from=30111&version=3.3.3.3&uin=542600078&fname=email%20status.png&size=750)
   
   发送失败的邮件状态截图:     
-  ![邮件状态](https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/477a9a2f710874f71c6d1b9d1eafe8569de5288dd3686e15ffff11ad17d4211b8cc2cc1876685a4f80ed1210e43473e6?pictype=scale&from=30111&version=3.3.3.3&uin=542600078&fname=failed_sending.png&size=750)
+  ![邮件状态](https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/ce846c2aea63557e2819e6da390e7d68e2165ec064bbc0342aa178302fc944917f7f4cf701520bbfe6d3b93c2c7846b6?pictype=scale&from=30113&version=3.3.3.3&uin=542600078&fname=failed_sending.png&size=750)
   
   
   
