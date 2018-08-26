@@ -3,7 +3,7 @@
 > <font size="4">[1.功能简介](#功能简介)</font>    
 > <font size="4">[2.步骤介绍](#步骤介绍)</font>      
 > <font size="4">[3.开发环境](#开发环境)</font>      
-> <font size="4">[4.开发技术](#开发技术])</font>      
+> <font size="4">[4.开发技术](#开发技术)</font>      
 > <font size="4">[5.配置文件](#配置文件)</font>    
 > <font size="4">[6.示例截图](#示例截图)</font>  
  
