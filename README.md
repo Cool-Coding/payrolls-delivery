@@ -1,8 +1,8 @@
 ## 批量发送工资条  
-**功能简介**   
+### 功能简介
 读取excel中工资条数据，并批量发送邮件,功能比较简单，仅用于学习。
      
-**步骤介绍**   
+###步骤介绍   
 - 工资条模板格式
 
   |姓名|工资项1|工资项2|....|工资项n|邮件地址|
@@ -18,13 +18,13 @@
 >  说明:邮件批量发送是以主题分类，如果用户上传了多次exel属于同一主题，则进度会进行合并显示;
         如果发送过程中，有的邮件发送失败，则将在前端页面显示，用户可以选择重发，都发送成功后，用户可以选择删除服务器硬盘保存的excel及数据库发送记录。
  
-**开发环境**  
+###开发环境 
   - Intellij idea 2017
   - Windows10
   - JDK1.8
   - Mysql5.7.21  
   
-**开发技术**   
+###开发技术 
   - Springboot1.5.12
   - Mybatis1.3.2
   - Websocket
@@ -32,7 +32,7 @@
   - Thymeleaf
   - ECharts3.2.3
 
-**配置文件**  
+###配置文件 
 ```properties
 #web服务端口
 server.port=80
@@ -75,7 +75,7 @@ spring.datasource.url = jdbc:mysql://host:3306/database?useUnicode=true&useSSL=f
 spring.datasource.username = #数据库用户名
 spring.datasource.password = #密码
 ```
-**示例**  
+###示例截图
   1. 工资条  
   ![](https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/039e1449152e366860f5e7aa4f22c72fc62400ff407ef75eaa0ce33f220d47f099cb95f44be310455dcf1b6f1e79adcb?pictype=scale&from=30113&version=3.3.3.3&uin=542600078&fname=salary07.png&size=750)  
   
