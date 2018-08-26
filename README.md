@@ -85,16 +85,16 @@ spring.datasource.password = #密码
   如果检查excel数据失败，则返回消息，修改后重新上传。
   
   4. 检查通过，输入主题后，开始发送工资条  
-  ![进度1](https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/413322a540cb3ba17477544f113b6818c99ceec68c99fd34a355f3bb6f10ee3a7879ebae044204cba91a4cfb43de2431?pictype=scale&from=30113&version=3.3.3.3&uin=542600078&fname=salary03.png&size=750)
-  ![进度2](https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/2a9ef5d56708edeadfed0354b5656695c623b71b1e4d29297efdcb2ebe9c1a7077fb7c8b18cdecfe0b751d3a52c2214e?pictype=scale&from=30113&version=3.3.3.3&uin=542600078&fname=salary04.png&size=750)
-  ![进度3](https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/0a5e255343380876c8b538efe052bba266cf0ec5358495974142d3687fcf13ea38131ddfdfc5d75d8e191098a4a6dc70?pictype=scale&from=30113&version=3.3.3.3&uin=542600078&fname=salary05.png&size=750)
+  ![进度1](https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/413322a540cb3ba17477544f113b6818c99ceec68c99fd34a355f3bb6f10ee3a7879ebae044204cba91a4cfb43de2431?pictype=scale&from=30113&version=3.3.3.3&uin=542600078&fname=salary03.png&size=750)  
+  ![进度2](https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/2a9ef5d56708edeadfed0354b5656695c623b71b1e4d29297efdcb2ebe9c1a7077fb7c8b18cdecfe0b751d3a52c2214e?pictype=scale&from=30113&version=3.3.3.3&uin=542600078&fname=salary04.png&size=750)  
+  ![进度3](https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/0a5e255343380876c8b538efe052bba266cf0ec5358495974142d3687fcf13ea38131ddfdfc5d75d8e191098a4a6dc70?pictype=scale&from=30113&version=3.3.3.3&uin=542600078&fname=salary05.png&size=750)  
   
   > 关闭网页后，仍可通过输入 ***http://域名:端口号/list(websocket)或http://域名:端口号/result(轮询)*** 实时查看发送进度
   
   发送失败的邮件状态截图:      
   ![邮件状态](https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/ce846c2aea63557e2819e6da390e7d68e2165ec064bbc0342aa178302fc944917f7f4cf701520bbfe6d3b93c2c7846b6?pictype=scale&from=30113&version=3.3.3.3&uin=542600078&fname=failed_sending.png&size=750)
   
-  > 发送结束后，可以选择删除发送记录，服务器将删除上传的excel文件即数据库中的记录。
+  > 发送结束后，可以选择删除发送记录，服务器将删除上传的excel文件和数据库中的记录。
   
   
   
