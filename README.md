@@ -1,6 +1,8 @@
 ## 批量发送工资条  
-**功能简介** 读取excel中工资条数据，并批量发送邮件,功能比较简单，仅用于学习。   
-**步骤介绍** 
+**功能简介**   
+读取excel中工资条数据，并批量发送邮件,功能比较简单，仅用于学习。
+     
+**步骤介绍**   
 - 工资条模板格式
 
   |姓名|工资项1|工资项2|....|工资项n|邮件地址|
@@ -30,7 +32,7 @@
   - Thymeleaf
   - ECharts3.2.3
 
-**配置文件**
+**配置文件**  
 ```properties
 #web服务端口
 server.port=80
@@ -95,6 +97,9 @@ spring.datasource.password = #密码
   ![邮件状态](https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/ce846c2aea63557e2819e6da390e7d68e2165ec064bbc0342aa178302fc944917f7f4cf701520bbfe6d3b93c2c7846b6?pictype=scale&from=30113&version=3.3.3.3&uin=542600078&fname=failed_sending.png&size=750)
   
   > 发送结束后，可以选择删除发送记录，服务器将删除上传的excel文件和数据库中的记录。
+  
+  5.登录邮箱，查看收到的工资条
+  ![](https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/c3cea84a94e21d3a6adcce06a4d9420e44374e455862354255302c3a1aee1cf4c9edb1363e49fd8d0daf177dfdf8f263?pictype=scale&from=30113&version=3.3.3.3&uin=542600078&fname=salary08.png&size=750)  
   
   
   
