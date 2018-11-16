@@ -38,6 +38,7 @@
   - Websocket
   - Jquery3.1.1
   - Thymeleaf
+  - Poi
   - ECharts3.2.3
 
 ### 配置文件 
