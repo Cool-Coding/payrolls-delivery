@@ -2,11 +2,14 @@ package cn.yang.util;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.usermodel.Color;
+import org.apache.poi.ss.util.CellAddress;
 import org.apache.poi.xssf.usermodel.XSSFColor;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +21,10 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -40,14 +46,69 @@ public class ExcelUtil {
      * @throws IOException
      */
     public ArrayList<String[]> readExcel(File file) throws IOException{
-          ArrayList<String[]> data;
-          try {
-              data = readExcel_(file);
-              return data;
-          }catch(InvalidFormatException e){
-              logger.error(file.getName()+"的类型不是Excel");
-              throw new IOException(file.getName()+"的类型不是Excel");
-          }
+          return readExcel(file,0);
+    }
+
+    public ArrayList<String[]> readExcel(File file,int sheetNo) throws IOException{
+        ArrayList<String[]> data;
+        try {
+            data = readExcel_(file,sheetNo);
+            return data;
+        }catch(InvalidFormatException e){
+            logger.error(file.getName()+"的类型不是Excel");
+            throw new IOException(file.getName()+"的类型不是Excel");
+        }
+    }
+
+    public void writeExcel(File file, String sheetName, List<String> head,List<String[]> data) throws IOException {
+
+        Workbook workbook = null;
+        try {
+            // XSSFWorkbook used for .xslx (>= 2007), HSSWorkbook for 03 .xsl
+            workbook = new XSSFWorkbook();// XSSFWorkbook();//WorkbookFactory.create(inputStream);
+        } catch (Exception e) {
+            System.out.println("创建Excel失败: ");
+            e.printStackTrace();
+        }
+        if (workbook != null) {
+            Sheet sheet = workbook.createSheet(sheetName);
+            Row row0 = sheet.createRow(0);
+            if (head != null) {
+                for (int i = 0; i < head.size(); i++) {
+                    Cell cell = row0.createCell(i, Cell.CELL_TYPE_STRING);
+                    cell.setCellValue(head.get(i));
+                }
+            }
+
+            if (data != null) {
+                for (int rowNum = 0; rowNum < data.size(); rowNum++) {
+                    Row row = sheet.createRow(head == null ? rowNum : (rowNum + 1));
+                    for (int i = 0; i < data.get(rowNum).length; i++) {
+                        Cell cell = row.createCell(i, Cell.CELL_TYPE_STRING);
+                        cell.setCellValue(data.get(rowNum)[i]);
+                    }
+                }
+            }
+            try {
+                FileOutputStream outputStream = new FileOutputStream(file);
+                workbook.write(outputStream);
+                outputStream.flush();
+                outputStream.close();
+            } catch (Exception e) {
+                System.out .println("写入Excel失败: ");
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public Map<CellAddress, String> readComment(File file,int sheetNo) throws IOException, InvalidFormatException {
+        Workbook wb=openWorkbook(file);
+        if (wb==null) return null;
+        Sheet sheet = wb.getSheetAt(sheetNo);
+        Map<CellAddress, String> commentMap = new HashMap<>();
+        Map<CellAddress, ? extends Comment> cellComments = sheet.getCellComments();
+        cellComments.forEach((k,v) -> commentMap.put(k,v.getString().getString()));
+        return commentMap;
     }
 
     /**
@@ -57,14 +118,11 @@ public class ExcelUtil {
      * @throws IOException
      * @throws InvalidFormatException
      */
-    private ArrayList<String[]> readExcel_(File file) throws IOException,InvalidFormatException{
+    private ArrayList<String[]> readExcel_(File file,int sheetNo) throws IOException,InvalidFormatException{
         Workbook wb=openWorkbook(file);
         if (wb==null) return null;
-        if(wb.getNumberOfSheets()>1){
-            logger.info(file.getName()+"发现多个sheet，只会读取第一个");
-        }
         //读取第一个sheet
-        Sheet sheet = wb.getSheetAt(0);
+        Sheet sheet = wb.getSheetAt(sheetNo);
         //读取列数(以第一行为准)
         int colCount=sheet.getRow(0).getPhysicalNumberOfCells();
         //列索引
@@ -211,4 +269,5 @@ public class ExcelUtil {
         }
         return password;
     }
+
 }

@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: H:\hadoop\intellj_workspace\ExerciseHub\out\artifacts\Emai
- lsSend_jar
-Main-Class: cn.yang.Application
-
